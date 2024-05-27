@@ -5,6 +5,7 @@ import { UIKitSettingsBuilder } from "@cometchat/uikit-shared";
 import { CometChatConstants } from "../../constants";
 import { CometChatUIKit } from "@cometchat/chat-uikit-react";
 import Home from "../Home";
+import MessageList from "../MessageList";
 
 function App() {
     const initCometChat = async () => {
@@ -16,6 +17,8 @@ function App() {
         .build();
       await CometChatUIKit?.init(UIKitSettings);
       console.log("cometchat init success");
+      const user = await CometChatUIKit.login("superhero1");
+      console.log("logged in success", user);
     }
       console.log("init success");
     useEffect(() => {
@@ -32,12 +35,18 @@ function App() {
             <CometChatAvatar />
         )
     }
+    const getMessageList = () => {
+        return (
+            <MessageList />
+        )
+    }
   return (
     <div className="generator">
         <BrowserRouter>
         <Routes>
         <Route path="/" element={getHomePage()} />
         <Route path="/avatar" element={getAvatar()} />
+        <Route path="/messagesList" element={getMessageList()} />
         </Routes>
         </BrowserRouter>
          {/* <CometChatAvatar /> */}

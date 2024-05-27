@@ -8,7 +8,6 @@ import 'prismjs/components/prism-clike';
 import 'prismjs/components/prism-javascript';
 import 'prismjs/themes/prism.css';
 import { avatar_edit_container, avatar_preview_container, code_snippet_preview, copy_button } from './style';
-// import { highlight, languages } from 'prismjs/components/prism-core';
 
 const CometChatAvatar: React.FC = () => {
   const [avatarStyle, setAvatarStyle] = useState({
