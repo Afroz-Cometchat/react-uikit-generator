@@ -5,9 +5,13 @@ function Home() {
     const handleAvatarClick = () => {
         navigate('/avatar')
     }
+    const handleMessageListClick = () => {
+        navigate('/messagesList')
+    }
     return (
         <div>
             <button onClick={handleAvatarClick}>CometChat Avatar</button>
+            <button onClick={handleMessageListClick}>CometChat Messages List</button>
         </div>
     )
 }
